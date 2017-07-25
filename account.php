@@ -25,6 +25,30 @@
     <body>
         <div class="container-fluid">
             <form class="form-horizontal" action="" method="post">
+                <div class="form-group">
+                    <label for="first_name" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="first_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="last_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                </div>
 
             </form>
         </div>
