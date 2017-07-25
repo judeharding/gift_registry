@@ -12,7 +12,8 @@
     </head>
     <body>
         <h1>Welcome to THE Gift Registry</h1>
-        <a href="account_list.php">Account List</a>
+        <a href="account_list.php">Account List</a><br>
+        <a href="account.php?action=insert">Add Account</a>
 
     </body>
 </html>

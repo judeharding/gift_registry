@@ -1,17 +1,23 @@
 <?php
     require("includes/db.php");
-    $account_id = $_GET["account_id"];
-    // echo $account_id;
-    $sql = "SELECT * FROM account WHERE account_id = '$account_id'";
-    $result = mysqli_query($mysqli, $sql);
-    // print_r($result);
-    while ($row = mysqli_fetch_assoc($result)) {
-        $account_id = $row["account_id"];
-        $first_name = $row["first_name"];
-        $last_name = $row["last_name"];
-        $email = $row["email"];
-        // echo "$account_id | $first_name | $last_name | $email <br> ";
+    $action = $_GET["action"];
+
+    if ($action == 'update' || $action == 'delete' || $action == 'view' ) {
+        // echo $action;
+        $account_id = $_GET["account_id"];
+        // echo $account_id;
+        $sql = "SELECT * FROM account WHERE account_id = '$account_id'";
+        $result = mysqli_query($mysqli, $sql);
+        // print_r($result);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $account_id = $row["account_id"];
+            $first_name = $row["first_name"];
+            $last_name = $row["last_name"];
+            $email = $row["email"];
+            // echo "$account_id | $first_name | $last_name | $email <br> ";
+        }
     }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,30 +30,32 @@
     </head>
     <body>
         <div class="container-fluid">
-            <form class="form-horizontal" action="" method="post">
+            <form class="form-horizontal" action="account_process.php" method="post">
                 <div class="form-group">
                     <label for="first_name" class="col-sm-2 control-label">First Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="first_name">
+                        <input type="text" class="form-control" id="first_name" name="first_name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="last_name" class="col-sm-2 control-label">Last Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="last_name">
+                        <input type="text" class="form-control" id="last_name" name="last_name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email">
+                        <input type="text" class="form-control" id="email" name="email">
                     </div>
                 </div>
 
                 <div class="form-group">
-
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default" name="submit" value="submit">Submit</button>
+                    </div>
                 </div>
 
             </form>

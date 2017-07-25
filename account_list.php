@@ -35,6 +35,9 @@
         ?>
     </head>
     <body>
+        <div class="row">
+            <div class="col-md-12"><a href="account.php?action=insert" class="btn btn-success">Add Account</a></div>
+        </div>
         <div class="container-fluid">
             <div class="table-responsive">
                 <table class="table">
