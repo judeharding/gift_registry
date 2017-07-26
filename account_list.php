@@ -16,7 +16,7 @@
             // echo $last_name . "<br>";
             // echo $email . "<br>";
             echo "<tr>";
-                echo "<td><a href='account.php?account_id=$account_id'>$first_name</a></td>";
+                echo "<td><a href='account.php?action=update&account_id=$account_id'>$first_name</a></td>";
                 echo "<td>$last_name</td>";
                 echo "<td>$email</td>";
             echo "</tr>";

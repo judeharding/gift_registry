@@ -1,30 +1,29 @@
 <?php
-    // $account_id = $_POST["account_id"];
+
+    require("includes/db.php");
+
+    $action = $_POST["action"];
+    $account_id = $_POST["account_id"];
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
     $email = $_POST["email"];
     $submit = $_POST["submit"];
-    echo "$first_name | $last_name | $email | $submit";
+    echo "$account_id | $first_name | $last_name | $email | $action | $submit";
     echo "<br>";
 
-    // 
-    // if ($action == "insert") {
-    //     echo "INSERTING";
-    //     echo "continue inserting";
-    //     if (!empty($_POST["submit"])){
-    //         echo "if stmt running";
-    //         // $account_id = "123";
-    //         // $first_name = $_GET["first_name"];
-    //         // $last_name = $_GET["last_name"];
-    //         // $email = $_GET["email"];
-    //
-    //         // $sql = "INSERT INTO account (account_id, first_name, last_name, email) VALUES ('$account_id', '$first_name', '$last_name', '$email')";
-    //         // exit();
-    //     }
-    //     $mysqli->close();
-    // }
+    if ($action == "insert") {
+        $sql = "INSERT INTO account SET account_id='$account_id', first_name='$first_name', last_name='$last_name', email='$email'";
+        // $mysqli->query($sql);
+        $result = mysqli_query($mysqli, $sql);
+        var_dump($result);
+    }
 
-    echo "end of account_process.php file";
+    if ($action == "update") {
+        $sql = "UPDATE account SET  first_name='$first_name', last_name='$last_name', email='$email' WHERE account_id='$account_id' ";
+        $mysqli->query($sql);
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html>
