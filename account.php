@@ -2,22 +2,48 @@
     require("includes/db.php");
     $action = $_GET["action"];
 
-    if ($action == 'update' || $action == 'delete' || $action == 'view' ) {
-        // echo $action;
-        $account_id = $_GET["account_id"];
-        // echo $account_id;
-        $sql = "SELECT * FROM account WHERE account_id = '$account_id'";
-        $result = mysqli_query($mysqli, $sql);
-        // print_r($result);
-        while ($row = mysqli_fetch_assoc($result)) {
-            $account_id = $row["account_id"];
-            $first_name = $row["first_name"];
-            $last_name = $row["last_name"];
-            $email = $row["email"];
-            // echo "$account_id | $first_name | $last_name | $email <br> ";
+    if ($action == "insert") {
+        echo "INSERTING";
+
+        if (isset($_POST['submit'])){
+            // $account_id = "123";
+            // $first_name = $_GET["first_name"];
+            // $last_name = $_GET["last_name"];
+            // $email = $_GET["email"];
+
+            $sql = "INSERT INTO account (account_id, first_name, last_name, email) VALUES ('$account_id', '$first_name', '$last_name', '$email')" or die(mysql_error());
         }
+        $mysqli->close();
     }
 
+    if ($action == "update") {
+        echo "UPDATING";
+    }
+
+    if ($action == "delete") {
+        echo "DELETING";
+    }
+
+    if ($action == "view") {
+        echo "VIEWING";
+    }
+
+
+    // if ($action == 'update' || $action == 'delete' || $action == 'view' ) {
+    //     // echo $action;
+    //     $account_id = $_GET["account_id"];
+    //     // echo $account_id;
+    //     $sql = "SELECT * FROM account WHERE account_id = '$account_id'";
+    //     $result = mysqli_query($mysqli, $sql);
+    //     // print_r($result);
+    //     while ($row = mysqli_fetch_assoc($result)) {
+    //         $account_id = $row["account_id"];
+    //         $first_name = $row["first_name"];
+    //         $last_name = $row["last_name"];
+    //         $email = $row["email"];
+    //         // echo "$account_id | $first_name | $last_name | $email <br> ";
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html>
