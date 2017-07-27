@@ -86,6 +86,5 @@
         function returnAccountList(){
             window.history.back();
         }
-
     </script>
 </html>

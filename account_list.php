@@ -1,5 +1,4 @@
 <?php
-
     require("includes/db.php");
 
     function getAccounts(){
@@ -28,7 +27,6 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,7 +38,7 @@
     </head>
     <body>
         <?php require("includes/navbar.php"); ?>
-        
+
         <div class="container-fluid">
             <div class="table-responsive">
                 <table class="table">
@@ -50,10 +48,7 @@
                         <th>Email</th>
                         <th>Actions</th>
                     </tr>
-                    <?php
-                        getAccounts();
-                    ?>
-
+                    <?php getAccounts(); ?>
                 </table>
             </div>
         </div>

@@ -6,9 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>Gift Registry</title>
-        <?php
-            require ("header.php");
-        ?>
+        <?php require ("header.php"); ?>
     </head>
     <body>
         <h1>Welcome to THE Gift Registry</h1>

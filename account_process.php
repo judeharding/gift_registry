@@ -1,5 +1,4 @@
 <?php
-
     require("includes/db.php");
 
     $action = $_POST["action"];
@@ -34,7 +33,6 @@
         $msg = "Record successfully deleted";
     }
 
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,6 +47,5 @@
         <?php
         echo $msg;
         ?>
-
     </body>
 </html>

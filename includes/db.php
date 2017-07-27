@@ -6,7 +6,6 @@
         die("Connection failed");
     }
 ?>
-
 <?php
     $wait_time = "3";
 ?>
