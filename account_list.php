@@ -16,9 +16,13 @@
             // echo $last_name . "<br>";
             // echo $email . "<br>";
             echo "<tr>";
-                echo "<td><a href='account.php?action=update&account_id=$account_id'>$first_name</a></td>";
-                echo "<td>$last_name</td>";
-                echo "<td>$email</td>";
+                echo "<td><a href='account.php?action=view&account_id=$account_id'>$first_name</a></td>";
+                echo "<td><a href='account.php?action=view&account_id=$account_id'>$last_name</a></td>";
+                echo "<td><a href='account.php?action=view&account_id=$account_id'>$email</a></td>";
+                echo "<td>
+                            <a href='account.php?action=update&account_id=$account_id' class='btn btn-info'>Update</a>
+                            <a href='account.php?action=delete&account_id=$account_id' class='btn btn-danger'>Delete</a>
+                      </td>";
             echo "</tr>";
         }
     }
@@ -35,9 +39,8 @@
         ?>
     </head>
     <body>
-        <div class="row">
-            <div class="col-md-12"><a href="account.php?action=insert" class="btn btn-success">Add Account</a></div>
-        </div>
+        <?php require("includes/navbar.php"); ?>
+        
         <div class="container-fluid">
             <div class="table-responsive">
                 <table class="table">
@@ -45,6 +48,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Actions</th>
                     </tr>
                     <?php
                         getAccounts();

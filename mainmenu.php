@@ -1,6 +1,5 @@
 <?php
     require("includes/db.php");
-    require("header.php");
 ?>
 <!DOCTYPE html>
 <html>
