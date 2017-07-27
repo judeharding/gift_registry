@@ -19,8 +19,8 @@
                 echo "<td><a href='account.php?action=view&account_id=$account_id'>$last_name</a></td>";
                 echo "<td><a href='account.php?action=view&account_id=$account_id'>$email</a></td>";
                 echo "<td>
-                            <a href='account.php?action=update&account_id=$account_id' class='btn btn-info'>Update</a>
-                            <a href='account.php?action=delete&account_id=$account_id' class='btn btn-danger'>Delete</a>
+                            <a href='account.php?action=update&account_id=$account_id' class='btn btn-info btn-sm'><span class='glyphicon glyphicon-pencil'></span> Edit</a>
+                            <a href='account.php?action=delete&account_id=$account_id' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash'></span> Delete</a>
                       </td>";
             echo "</tr>";
         }
